@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filtered Book Count</title>
+</head>
+<body>
+  <h1>Publishers - Filtered Book Count</h1>
+  <p>Counting books where Price > 50, Quantity < 5, and Quantity >= 1</p>
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Publisher Name</th>
+      <th>Location</th>
+      <th>Filtered Book Count</th>
+    </tr>
+    {% for publisher in publishers %}
+    <tr>
+      <td>{{ publisher.name }}</td>
+      <td>{{ publisher.location }}</td>
+      <td>{{ publisher.filtered_book_count }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="3">No publishers found in the database.</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
